@@ -1,0 +1,19 @@
+Let's try to follow applicative-order evaluation
+
+```
+(sqrt-iter 1.0 1)
+
+ (new-if (good-enough? 1.0 1)
+        1.0
+        (sqrt-iter (improve 1.0 1)
+        1))
+
+(new-if true
+		1.0
+		(sqrt-iter 5.0 9))
+ ...
+```
+At this point, it became obvious that **execution will never terminate successfully**.  
+Because according to applicative-order evaluation, the interpreter needs to evaluate both `then-clause` and `else-clause`, no matter what the value of predicate is.  
+
+Also `if` has unfair advantage of lazy/delayed evaluation of it’s clauses, so we won’t be able to define `new-if` using tricks in this chapter.

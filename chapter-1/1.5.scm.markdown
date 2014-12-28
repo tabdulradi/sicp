@@ -1,0 +1,14 @@
+### normal-order evaluation
+```
+(test 0 (p))
+(if (= 0 0) 0 (p)))  
+0
+```
+Evaluates to 0, without the need to evaluate `y`.
+### applicative-order evaluation
+```
+(test 0 (p))
+(test 0 (p))
+...
+```
+Program will never terminate successfully, because `p` will will expand to itself infinitely, until it goes out of memory.

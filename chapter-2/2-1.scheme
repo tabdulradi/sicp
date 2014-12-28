@@ -1,0 +1,10 @@
+(define (make-rat n d)
+  (let ((g (gcd n d)))
+    (cons (/ n g) (/ d g))))
+
+(define (normalize x) 
+	(if (< (denom x) 0)
+	    (flip-sign x)
+	    x))
+
+(define (flip-sign x)(make-rat (- num x)(- denom)))
