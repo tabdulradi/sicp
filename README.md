@@ -1,5 +1,7 @@
 #SICP
 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/tabdulradi/sicp?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Contains SICP's examples and solutions implemented in different languages.
 
 ##Languages
