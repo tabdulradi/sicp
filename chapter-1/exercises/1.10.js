@@ -64,7 +64,7 @@ A(0, A(0, A(0, A(1, 13)))))
 A(0, A(0, A(0, A(0, A(1, 12))))))
 A(0, A(0, A(0, A(0, A(0, A(1, 11)))))))
 A(0, A(0, A(0, A(0, A(0, A(0, A(1, 10))))))))
-From previous substitution then -> A(1, 10) = 1024
+From previous substitution: A(1, 10) = 1024
 A(0, A(0, A(0, A(0, A(0, A(0, 1024))))))
 A(0, A(0, A(0, A(0, A(0, 2048)))))
 A(0, A(0, A(0, A(0, 4096))))
@@ -80,12 +80,9 @@ A(3, 3)
 A(2, A(3, 2))
 A(2, A(2, A(3, 1)))
 A(2, A(2, 2))
-A(2, A(1, A(2, 1)))
-A(2, A(1, 2))
-A(2, A(0, A(1, 1)))
-A(2, A(0, 2))
+From previous substitution: A(2, 2) = 4
 A(2, 4)
-From previous substitution then ->
+From previous substitution: A(2, 4) = 65536
 65536
 */
 
