@@ -102,9 +102,27 @@ A(2,4)
 
 65536
 
+function A(x,y) {
+   if (y === 0) 
+        return 0;Give concise mathematical definitions for the functions computed by the functions f, g, and h for positive integer values of . For example, (k n) computes .
 
+   else if (x === 0) 
+        return 2 * y;
+   else if (y === 1)
+        return 2;
+   else return A(x - 1, A(x, y - 1));
+}
 
+function f(n) {
+   return A(0,n);
+}
+ // return 2*n 
 
+function g(n) {
+   return A(1,n);
+}
+// return 2 **n
+ 
 
 
 
