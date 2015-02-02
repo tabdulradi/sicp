@@ -1,0 +1,20 @@
+<html>
+<head>
+  <title>Tree</title>
+  <script src="pair.js"></script>
+  <script src="triple.js"></script>
+  <script src="tree.js"></script>
+  <script src="test.js"></script>
+</head>
+<body style="background: red"></body>
+<script>
+var l1 = leaf(3)
+var l2 = leaf(2)
+assert(isLeaf(l1))
+assert(isLeaf(l2))
+var n = node(1, l1, l2)
+assert(!isLeaf(n))
+assertEquals(length(n), 3)
+testPassed()
+</script>
+</html>

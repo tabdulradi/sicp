@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <title>List</title>
+    <script src="test.js"></script>
+    <script src="pair.js"></script>
+    <script src="list.js"></script>
+  </head>
+  <body style="background: red"></body>
+  <script>
+    var l = range(1, 5)
+    assertEquals(head(l), 1)
+    assertEquals(head(tail(l)), 2)
+    assertEquals(head(tail(tail(l))), 3)
+    assertEquals(head(tail(tail(tail(l)))), 4)
+    assertEquals(head(tail(tail(tail(tail(l))))), 5)
+    assert(!isEmptyList(l))
+    assert(isEmptyList(tail(tail(tail(tail(tail(l)))))))
+    assertEquals(last(l), 5)
+
+    var l2 = append(l, 100)
+    assertEquals(head(l2), 1)
+    assertEquals(last(l2), 100)
+
+    var l3 = reverse(l2)
+    assertEquals(head(l3), 100)
+    assertEquals(last(l3), 1)
+
+    assertEquals(get(l3, 0), 100)
+    assertEquals(get(l3, 1), 5)
+    assertEquals(get(l3, 2), 4)
+    assertEquals(get(l3, 3), 3)
+    assertEquals(get(l3, 4), 2)
+    assertEquals(get(l3, 5), 1)
+
+    assertEquals(length(l), 5)
+    assertEquals(length(l2), 6)
+
+    assert(contains(l3, 100))
+    assert(!contains(l, 100))
+
+    var l4 = range(6, 10)
+    var l5 = merge(l, l4)
+    assertEquals(get(l5, 0), 1)
+    assertEquals(get(l5, 1), 2)
+    assertEquals(get(l5, 2), 3)
+    assertEquals(get(l5, 3), 4)
+    assertEquals(get(l5, 4), 5)
+    assertEquals(get(l5, 5), 6)
+    assertEquals(get(l5, 6), 7)
+    assertEquals(get(l5, 7), 8)
+    assertEquals(get(l5, 8), 9)
+    assertEquals(get(l5, 9), 10)
+
+    function inc(x) { return x + 1 }
+    var l6 = map(l, inc)
+    assertEquals(get(l6, 0), 2)
+    assertEquals(get(l6, 1), 3)
+    assertEquals(get(l6, 2), 4)
+    assertEquals(get(l6, 3), 5)
+    assertEquals(get(l6, 4), 6)
+
+    function isEven(x) { return x % 2 === 0 }
+    var l7 = filter(l5, isEven)
+    assertEquals(get(l7, 0), 2)
+    assertEquals(get(l7, 1), 4)
+    assertEquals(get(l7, 2), 6)
+    assertEquals(get(l7, 3), 8)
+    assertEquals(get(l7, 4), 10)
+
+    function sum(a, b) { return a + b }
+    var result1 = reduce(0, l7, sum)
+    assertEquals(result1, 2 + 4 + 6 + 8 + 10)
+
+    var l7 = map2(l, inc)
+    assertEquals(get(l7, 0), 2)
+    assertEquals(get(l7, 1), 3)
+    assertEquals(get(l7, 2), 4)
+    assertEquals(get(l7, 3), 5)
+    assertEquals(get(l7, 4), 6)
+
+    testPassed()
+  </script>
+</html>

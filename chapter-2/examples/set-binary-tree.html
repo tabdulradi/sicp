@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <title>Set Binary Tree</title>
+    <script src="pair.js"></script>
+    <script src="triple.js"></script>
+    <script src="tree.js"></script>
+    <script src="set-binary-tree.js"></script>
+    <script src="test.js"></script>
+  </head>
+  <body style="background: red"></body>
+  <script>
+    assert(isEmptySet(emptySet))
+    var s1 = addToSet(emptySet, 1)
+    assert(!isEmptySet(s1))
+    assert(contains(s1, 1))
+    assertEquals(length(s1), 1)
+
+    var s2 = addToSet(s1, 1)
+    assert(!isEmptySet(s2))
+    assert(contains(s2, 1))
+    assertEquals(length(s2), 1)
+
+    var s3 = addToSet(s2, 2)
+    assert(!isEmptySet(s3))
+    assert(contains(s3, 1))
+    assert(contains(s3, 2))
+    assertEquals(length(s3), 2)
+
+    var s4 = addToSet(addToSet(emptySet, 10), 11)
+    assert(contains(s4, 10))
+    assert(contains(s4, 11))
+    assertEquals(length(s4), 2)
+
+    var s5 = union(s4, s3)
+    assert(contains(s5, 1))
+    assert(contains(s5, 2))
+    assert(contains(s5, 10))
+    assert(contains(s5, 11))
+    assertEquals(length(s5), 4)
+
+    var s6 = addToSet(addToSet(emptySet, 10), 100)
+    var s7 = union(s5, s6)
+    assert(contains(s7, 1))
+    assert(contains(s7, 2))
+    assert(contains(s7, 10))
+    assert(contains(s7, 11))
+    assert(contains(s7, 100))
+    assertEquals(length(s7), 5)
+
+    var s8 = intersection(s5, s6)
+    assert(contains(s8, 10))
+    assertEquals(length(s8), 1)
+
+    testPassed()
+  </script>
+</html>
