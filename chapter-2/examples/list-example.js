@@ -20,5 +20,5 @@ function isPrime(n) {
 }
 
 function sumSquaresOfPrimes(l) {
-  notImplemented("sumSquaresOfPrimes");
+  return reduce(0, map(filter(l, isPrime), square), sum)
 }

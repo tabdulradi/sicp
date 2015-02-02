@@ -19,5 +19,7 @@ function execute(op, a, b) {
 }
 
 function evaluate(node){
-  notImplemented("evaluate");
+  return isLeaf(node) ?
+            value(node) :
+            execute(value(node), evaluate(left(node)), evaluate(right(node)));
 }

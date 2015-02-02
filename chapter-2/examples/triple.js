@@ -1,15 +1,15 @@
 function triple(first, second, third) {
-  notImplemented("triple");
+  return pair(first, pair(second, third));
 }
 
 function first(triple) {
-  notImplemented("first");
+  return head(triple);
 }
 
 function second(triple) {
-  notImplemented("second");
+  return head(tail(triple));
 }
 
 function third(triple) {
-  notImplemented("third");
+  return tail(tail(triple));
 }

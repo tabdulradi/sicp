@@ -18,5 +18,5 @@ function isLeaf(node) {
 }
 
 function length(t) {
-  notImplemented("length");
+  return (isEmptyTree(t)) ? 0 : 1 + length(left(t)) + length(right(t))
 }
